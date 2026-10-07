@@ -1,0 +1,33 @@
+name: Apply signature and export
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/apply-signature-export.yml"
+      - "scripts/patch_signature_export.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply signature and export update
+        run: python scripts/patch_signature_export.py
+      - name: Commit update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Add patient signatures and printable sheets [skip ci]"
+            git push
+          fi
