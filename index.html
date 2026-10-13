@@ -128,6 +128,95 @@ radial-gradient(circle at 100% 0,rgba(54,112,192,.09),transparent 35%),#f4f7fb}
   .login-v2-card{padding:28px 22px;border-radius:20px}
   .login-v2-card h2{font-size:26px}
 }
+
+/* App V2 — visual system */
+:root{
+  --bg:#f4f7fb;
+  --nav:#0a2142;
+  --blue:#256fe7;
+  --blue2:#3a8af7;
+  --ink:#12233f;
+  --muted:#74839a;
+  --line:#e2e8f0;
+  --green:#16835a;
+  --red:#c8444e;
+  --amber:#a56c0b;
+  --shadow:0 10px 32px rgba(23,45,78,.07);
+}
+body{background:var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.shell{grid-template-columns:264px minmax(0,1fr);background:var(--bg)}
+.nav{background:linear-gradient(180deg,#081d3b 0%,#0c294e 60%,#0a2242 100%);padding:20px 14px 16px;border-right:1px solid rgba(255,255,255,.04);box-shadow:10px 0 36px rgba(8,29,59,.06)}
+.app-brand{display:flex;align-items:center;gap:11px;padding:2px 9px 20px}
+.app-brand-logo{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#39d5e8,#2a79ff);box-shadow:0 9px 22px rgba(38,119,231,.28);flex:0 0 auto}
+.app-brand-logo svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round}
+.app-brand-name{line-height:1.05}.app-brand-name span{display:block;color:#adc2db;font-size:11px;font-weight:700}.app-brand-name strong{display:block;color:#fff;font-size:18px;margin-top:3px;letter-spacing:-.02em}
+.nav-section-title{padding:5px 11px 8px;color:#6f88a7;font-size:9px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+.nav button[data-v]{display:flex;align-items:center;gap:10px;color:#b9c9dc;padding:11px 12px;border-radius:11px;margin:2px 0;font-size:13px;transition:.15s ease}
+.nav button[data-v] svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.nav button[data-v]:hover{background:rgba(255,255,255,.065);color:#fff}
+.nav button[data-v].active{background:linear-gradient(90deg,rgba(51,126,231,.26),rgba(51,126,231,.12));color:#fff;box-shadow:inset 3px 0 0 #56a0ff}
+.clinicbar{margin:3px 5px 18px;padding:10px 11px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.065);border-radius:12px}
+.clinicbar label{font-size:9px;color:#7891ae;letter-spacing:.12em}
+.clinicbar select{height:38px;margin-top:4px;background:#112f56;color:#e9f2fd;border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:0 9px;font-size:12px}
+.who{margin:14px 5px 0;padding:13px 10px 2px;border-top:1px solid rgba(255,255,255,.09);display:grid;grid-template-columns:36px 1fr;gap:9px;align-items:center}
+.user-avatar{width:36px;height:36px;border-radius:11px;background:rgba(90,158,246,.16);display:grid;place-items:center;color:#9dcbff;font-weight:900;text-transform:uppercase}
+.user-meta{min-width:0}.user-meta strong{display:block;color:#edf5ff;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.user-meta span{display:block;color:#7890ad;font-size:10px;margin-top:2px}.user-meta .link{padding:4px 0!important;font-size:10px!important;color:#91b9e9!important;text-align:left}
+.main{padding:30px 34px 46px;max-width:1480px}
+.header{align-items:center;margin-bottom:20px}
+.header .eyebrow{font-size:10px;color:#5579a9;letter-spacing:.14em}
+.header h1{font-size:27px;letter-spacing:-.035em;color:#11233f;margin:5px 0 4px}
+.header p{font-size:13px;color:#7a899e}
+.card{border:1px solid #e3e9f1;border-radius:16px;box-shadow:var(--shadow)}
+.metrics{gap:11px;margin:16px 0 18px}
+.metric{position:relative;overflow:hidden;padding:16px 17px;min-height:91px}
+.metric:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#dce8f7}
+.metric:nth-child(2):before{background:#56b98b}.metric:nth-child(3):before{background:#ef7a82}.metric:nth-child(4):before{background:#efbd55}.metric:nth-child(5):before{background:#63a0ef}
+.metric span{font-size:10px;letter-spacing:.02em}.metric strong{font-size:24px;color:#162a47}
+.panel{padding:15px;background:rgba(255,255,255,.98)}
+.toolbar{padding:1px 1px 12px;margin:0}
+.input{height:43px;border-color:#d8e1ec;border-radius:10px;background:#fff;font-size:13px}
+.search{padding-left:13px}
+.btn{border-radius:9px;padding:9px 13px;font-size:12px;transition:.14s ease}
+.btn:hover{transform:translateY(-1px)}
+.primary{background:linear-gradient(90deg,#2879eb,#2568d8);box-shadow:0 7px 16px rgba(37,105,216,.16)}
+.secondary{background:#eef3f8;color:#304b6c}
+.tablewrap{border-color:#e4eaf2;border-radius:12px;background:#fff}
+.head{background:#f8fafc;color:#8190a4;font-size:9px;letter-spacing:.055em}
+.row{border-top-color:#edf1f5;transition:.12s ease}
+.row:hover{background:#fbfdff}
+.name strong{font-size:13px;color:#1c304b}.name small{margin-top:3px;font-size:10px}
+.status{border-radius:8px;min-height:34px;padding:6px 9px;font-size:11px}
+.summarychips span{background:#f3f6fa;border:1px solid #e6ebf1}
+.tabs{background:#eef3f8;padding:3px;border-radius:10px;gap:2px}
+.tabs button{border:0;background:transparent;border-radius:8px;padding:7px 12px;font-size:11px;font-weight:800;color:#687b93}
+.tabs button.on{background:#fff;color:#245fae;box-shadow:0 2px 9px rgba(22,52,88,.08)}
+.settings{gap:15px}.settings .card{padding:21px}
+.settings .card h2{font-size:16px;margin:0 0 6px;color:#1c304a}
+.location-card{background:#fafcff;border-color:#e4eaf2}
+.days button{font-size:11px;font-weight:800}.days button.on{background:#eaf3ff;border-color:#c9dcf7}
+.modalbg{background:rgba(7,20,39,.58);backdrop-filter:blur(4px);z-index:100}
+.modal{border-radius:18px;box-shadow:0 30px 90px rgba(5,19,38,.25)}
+.record-card{border-color:#e2e8f0;box-shadow:0 5px 18px rgba(20,45,80,.035)}
+.notice{background:#fff8e9;border:1px solid #f5e2b6;color:#805a16}
+.msg.err{border:1px solid #f0c8cc}
+.datebar{background:#fff;padding:4px;border:1px solid #e0e7ef;border-radius:11px;box-shadow:0 5px 18px rgba(25,50,82,.04)}
+.datebar .input{border:0;box-shadow:none;height:34px}
+.datebar .btn{height:34px}
+.iconbtn{width:34px;height:34px}
+.empty{background:#fbfcfe}
+.mobile-brand{display:none}
+@media(max-width:1100px){
+  .main{padding:22px}
+  .table .row{box-shadow:0 8px 24px rgba(18,43,76,.05)}
+}
+@media(max-width:900px){
+  .mobile{display:flex;gap:6px;padding:8px 10px;box-shadow:0 6px 20px rgba(20,42,70,.06)}
+  .mobile-brand{display:flex;align-items:center;gap:7px;white-space:nowrap;font-weight:900;color:#173557;padding-right:5px}
+  .mobile-brand .mini-logo{width:31px;height:31px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(145deg,#39d5e8,#2a79ff)}
+  .mobile-brand svg{width:17px;height:17px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round}
+  .mobile button{font-size:11px}
+  .mobile .mobile-unit{font-size:11px}
+}
 </style>
 </head>
 <body>
@@ -148,7 +237,7 @@ async function boot(){var raw=localStorage.getItem("cp-session");if(raw){try{var
 function auth(){document.getElementById("app").innerHTML='<div class="login-v2"><section class="login-v2-hero"><div class="login-v2-content"><div class="login-v2-brand"><div class="login-v2-logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><div class="login-v2-brandtext"><span>Clínica</span><strong>Presença</strong></div></div><p class="login-v2-kicker">Rotina clínica organizada</p><h1>Seu atendimento,<span>mais simples e organizado.</span></h1><p class="login-v2-desc">Pacientes, frequência, assinaturas e prontuário em um único lugar — pensado para a rotina do profissional.</p><div class="login-v2-features"><div class="login-v2-feature"><div class="login-v2-feature-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div><div><strong>Pacientes organizados</strong><p>Cadastros, unidades e histórico sempre à mão.</p></div></div><div class="login-v2-feature"><div class="login-v2-feature-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg></div><div><strong>Prontuário digital</strong><p>Avaliação inicial, avaliações e evoluções no mesmo fluxo.</p></div></div><div class="login-v2-feature"><div class="login-v2-feature-icon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16v-4M12 16V8M17 16v-7"/></svg></div><div><strong>Controle e relatórios</strong><p>Frequência, assinaturas e documentos prontos para consulta.</p></div></div></div></div></section><section class="login-v2-side"><div class="login-v2-card"><p class="login-v2-eyebrow">Acesso restrito</p><h2 id="at">Entrar na plataforma</h2><p id="ad" class="login-v2-subtitle">Use seu nome de usuário e senha para acessar.</p><div id="am"></div><div class="login-v2-field"><label>Usuário</label><div class="login-v2-input"><span class="login-v2-input-icon"><svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></span><input id="username" type="text" autocomplete="username" maxlength="32" placeholder="Seu usuário"><span></span></div></div><div class="login-v2-field"><label>Senha</label><div class="login-v2-input"><span class="login-v2-input-icon"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><input id="pass" type="password" autocomplete="current-password" minlength="12" placeholder="Sua senha"><button id="togglePass" type="button" class="login-v2-eye" aria-label="Mostrar senha"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg></button></div></div><div class="login-v2-field hidden" id="af"><label>Código de ativação</label><div class="login-v2-input"><span class="login-v2-input-icon"><svg viewBox="0 0 24 24"><path d="M12 2l7 4v5c0 5-3 9-7 11-4-2-7-6-7-11V6z"/></svg></span><input id="activation" type="password" autocomplete="off" placeholder="Código de uso único"><span></span></div></div><button id="go" class="login-v2-submit">Entrar →</button><div class="login-v2-security">🔒 Acesso seguro e protegido</div><div class="login-v2-activate"><button id="activate" class="link">Ativar primeiro administrador</button></div></div></section></div>';var mode="login";function setMode(next){mode=next;var activating=mode==="activate";$("#at").textContent=activating?"Ativar administrador":"Entrar na plataforma";$("#ad").textContent=activating?"Defina a senha do administrador e informe o código de ativação.":"Use seu nome de usuário e senha para acessar.";$("#go").textContent=activating?"Ativar administrador →":"Entrar →";$("#af").classList.toggle("hidden",!activating);$("#activate").textContent=activating?"Voltar ao login":"Ativar primeiro administrador";$("#username").disabled=activating;if(activating)$("#username").value="admin"}var toggle=$("#togglePass");if(toggle)toggle.onclick=function(){var p=$("#pass"),show=p.type==="password";p.type=show?"text":"password";toggle.setAttribute("aria-label",show?"Ocultar senha":"Mostrar senha");toggle.innerHTML=show?'<svg viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 4.2A10.6 10.6 0 0 1 12 4c6.5 0 10 8 10 8a18 18 0 0 1-2.1 3.2"/><path d="M6.6 6.6C3.7 8.4 2 12 2 12s3.5 8 10 8a9.8 9.8 0 0 0 4.1-.9"/></svg>':'<svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg>'};$("#activate").onclick=function(){setMode(mode==="activate"?"login":"activate")};async function submitLogin(){var username=$("#username").value.trim().toLowerCase(),pass=$("#pass").value,activation=$("#activation").value.trim();if(!username||!pass){msg("#am","Informe usuário e senha.",false);return}if(!/^[a-z0-9._-]{3,32}$/.test(username)){msg("#am","Usuário inválido.",false);return}if(pass.length<12){msg("#am","A senha precisa ter pelo menos 12 caracteres.",false);return}if(mode==="activate"&&!activation){msg("#am","Informe o código de ativação.",false);return}var go=$("#go");go.disabled=true;go.textContent=mode==="activate"?"Ativando...":"Entrando...";try{var payload=mode==="activate"?{action:"bootstrap",username:username,password:pass,secret:activation}:{action:"login",username:username,password:pass};var r=await fetch(SB+"/functions/v1/username-auth",{method:"POST",headers:{"apikey":KEY,"Content-Type":"application/json"},body:JSON.stringify(payload)});var j=await r.json();if(!r.ok)throw new Error(j.error||"Falha no acesso");if(!j.session)throw new Error("Sessão não recebida.");save(j.session);boot()}catch(x){msg("#am",x.message,false);go.disabled=false;go.textContent=mode==="activate"?"Ativar administrador →":"Entrar →"}}$("#go").onclick=submitLogin;$("#pass").onkeydown=function(ev){if(ev.key==="Enter")submitLogin()};$("#username").onkeydown=function(ev){if(ev.key==="Enter")$("#pass").focus()};fetch(SB+"/functions/v1/username-auth",{method:"POST",headers:{"apikey":KEY,"Content-Type":"application/json"},body:JSON.stringify({action:"status"})}).then(function(r){return r.json()}).then(function(j){if(j&&j.initialized){var a=$("#activate");if(a)a.classList.add("hidden")}}).catch(function(){})}
 function onboarding(){document.getElementById("app").innerHTML='<div class="side" style="min-height:100vh"><div class="card login"><div class="eyebrow">Configuração inicial</div><h2>Criar a clínica</h2><p>Somente o primeiro usuário autenticado consegue inicializar este banco.</p><div id="om"></div><div class="field"><label>Nome da clínica</label><input id="cn" class="input" maxlength="120"></div><button id="cc" class="btn primary full">Criar ambiente</button><button id="lo" class="link" style="margin-top:12px">Sair</button></div></div>';$("#cc").onclick=async function(){try{await req("/rest/v1/rpc/create_clinic_and_owner",{method:"POST",body:JSON.stringify({clinic_name:$("#cn").value.trim()})});boot()}catch(x){msg("#om",x.message,false)}};$("#lo").onclick=logout}
 function cname(){var c=S.member.clinics;return Array.isArray(c)?(c[0]&&c[0].name)||"Clínica":(c&&c.name)||"Clínica"}
-function shell(){var locHtml=S.locations.length?'<div class="clinicbar"><label>UNIDADE</label><select id="locationSelect">'+S.locations.map(function(l){return '<option value="'+l.id+'" '+(S.location&&l.id===S.location.id?"selected":"")+'>'+e(l.name)+'</option>'}).join("")+'</select></div>':"",mobileLoc=S.locations.length?'<select id="mobileLocationSelect" class="mobile-unit" aria-label="Unidade">'+S.locations.map(function(l){return '<option value="'+l.id+'" '+(S.location&&l.id===S.location.id?"selected":"")+'>'+e(l.name)+'</option>'}).join("")+'</select>':"";document.getElementById("app").innerHTML='<div class="shell"><aside class="nav"><div class="brand">'+e(cname())+'</div>'+locHtml+'<button data-v="attendance">✓ Atendimentos</button><button data-v="patients">👥 Pacientes</button><button data-v="reports">▥ Relatórios</button><button data-v="settings">⚙ Configurações</button><div class="who">'+e((S.user.user_metadata&&S.user.user_metadata.username)||"admin")+'<br>'+e(S.member.role)+'<br><button id="out" class="link" style="color:#fff;padding:8px 0">Sair</button></div></aside><div><div class="mobile">'+mobileLoc+'<button data-v="attendance">Atendimentos</button><button data-v="patients">Pacientes</button><button data-v="reports">Relatórios</button><button data-v="settings">Config.</button></div><main class="main" id="main"></main></div></div>';$$("[data-v]").forEach(function(b){b.onclick=function(){S.view=b.dataset.v;active();loadView()}});function changeLocation(id){S.location=S.locations.find(function(l){return l.id===id})||S.locations[0]||null;if(S.location)localStorage.setItem("cp-location-"+S.member.clinic_id,S.location.id);shell();loadView()}if($("#locationSelect"))$("#locationSelect").onchange=function(){changeLocation($("#locationSelect").value)};if($("#mobileLocationSelect"))$("#mobileLocationSelect").onchange=function(){changeLocation($("#mobileLocationSelect").value)};$("#out").onclick=logout;active()}
+function shell(){var userName=(S.user.user_metadata&&S.user.user_metadata.username)||"admin",initial=(userName.charAt(0)||"U").toUpperCase(),locHtml=S.locations.length?'<div class="clinicbar"><label>UNIDADE ATUAL</label><select id="locationSelect">'+S.locations.map(function(l){return '<option value="'+l.id+'" '+(S.location&&l.id===S.location.id?"selected":"")+'>'+e(l.name)+'</option>'}).join("")+'</select></div>':"",mobileLoc=S.locations.length?'<select id="mobileLocationSelect" class="mobile-unit" aria-label="Unidade">'+S.locations.map(function(l){return '<option value="'+l.id+'" '+(S.location&&l.id===S.location.id?"selected":"")+'>'+e(l.name)+'</option>'}).join("")+'</select>':"";var logo='<span class="app-brand-logo"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>';document.getElementById("app").innerHTML='<div class="shell"><aside class="nav"><div class="app-brand">'+logo+'<div class="app-brand-name"><span>Clínica</span><strong>Presença</strong></div></div>'+locHtml+'<div class="nav-section-title">Menu principal</div><button data-v="attendance"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Atendimentos</span></button><button data-v="patients"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg><span>Pacientes</span></button><button data-v="reports"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span>Relatórios</span></button><button data-v="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9A1.7 1.7 0 0 0 21 10h.2v4H21a1.7 1.7 0 0 0-1.6 1z"/></svg><span>Configurações</span></button><div class="who"><div class="user-avatar">'+e(initial)+'</div><div class="user-meta"><strong>'+e(userName)+'</strong><span>'+e(S.member.role==="owner"?"Proprietário":S.member.role==="admin"?"Administrador":"Equipe")+'</span><button id="out" class="link">Sair da conta</button></div></div></aside><div><div class="mobile"><div class="mobile-brand"><span class="mini-logo"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span>Presença</span></div>'+mobileLoc+'<button data-v="attendance">Atendimentos</button><button data-v="patients">Pacientes</button><button data-v="reports">Relatórios</button><button data-v="settings">Config.</button></div><main class="main" id="main"></main></div></div>';$$("[data-v]").forEach(function(b){b.onclick=function(){S.view=b.dataset.v;active();loadView()}});function changeLocation(id){S.location=S.locations.find(function(l){return l.id===id})||S.locations[0]||null;if(S.location)localStorage.setItem("cp-location-"+S.member.clinic_id,S.location.id);shell();loadView()}if($("#locationSelect"))$("#locationSelect").onchange=function(){changeLocation($("#locationSelect").value)};if($("#mobileLocationSelect"))$("#mobileLocationSelect").onchange=function(){changeLocation($("#mobileLocationSelect").value)};$("#out").onclick=logout;active()}
 function active(){var current=S.view==="users"?"settings":S.view;$$("[data-v]").forEach(function(b){b.classList.toggle("active",b.dataset.v===current)})}
 async function logout(){try{await req("/auth/v1/logout",{method:"POST"})}catch(x){}save(null);S.user=null;auth()}
 function bounds(v){var a=v.slice(0,7).split("-").map(Number);return {s:v.slice(0,7)+"-01",n:new Date(Date.UTC(a[0],a[1],1)).toISOString().slice(0,10)}}
