@@ -1,0 +1,9 @@
+{
+  "name":"Clínica Presença",
+  "short_name":"Presença",
+  "start_url":"/",
+  "display":"standalone",
+  "background_color":"#f4f7fb",
+  "theme_color":"#0a2142",
+  "icons":[{"src":"/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
