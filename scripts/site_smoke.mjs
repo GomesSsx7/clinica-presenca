@@ -31,7 +31,7 @@ for(const file of ["index.html","privacy.html","terms.html","faq.html","404.html
   let m;
   while((m=localHref.exec(html))){
     const target=m[1];
-    if(/^https?:/.test(target)||target==="") continue;
+    if(/^https?:/.test(target)||target.startsWith("/")||target==="") continue;
     const resolved=target===" "?null:path.join(root,target);
     if(resolved&&!fs.existsSync(resolved)) throw new Error(file+" aponta para arquivo inexistente: "+target);
   }
