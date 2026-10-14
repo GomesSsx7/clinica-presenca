@@ -248,6 +248,119 @@ button:disabled{opacity:.65;cursor:not-allowed;transform:none!important}
 .legal-inline{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.legal-inline a{font-size:12px;color:#356da9}
 @media(max-width:680px){.cookie-consent{align-items:stretch;flex-direction:column}.cookie-actions{display:grid;grid-template-columns:1fr 1fr}.cookie-actions .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.btn:hover{transform:none!important}}
+
+/* Responsive V3 — phone/tablet validated layout */
+.mobile-top,.mobile-bottom{display:none}
+@media(max-width:1180px){
+  body{overflow-x:hidden}
+  .shell{display:block;min-height:100vh}
+  .nav,.mobile{display:none!important}
+  .mobile-top{
+    display:flex;position:sticky;top:0;z-index:60;align-items:center;gap:10px;
+    min-height:58px;padding:8px 14px;background:rgba(255,255,255,.98);
+    border-bottom:1px solid #e1e8f0;box-shadow:0 5px 20px rgba(17,42,73,.06);
+    backdrop-filter:blur(12px)
+  }
+  .mobile-top-brand{display:flex;align-items:center;gap:8px;min-width:max-content;font-weight:900;color:#173557}
+  .mobile-top-brand .mini-logo{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(145deg,#39d5e8,#2a79ff);box-shadow:0 6px 14px rgba(37,111,231,.2)}
+  .mobile-top-brand svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round}
+  .mobile-top .mobile-unit{margin-left:auto;flex:1;min-width:0;max-width:260px;height:40px;border:1px solid #dbe4ee;border-radius:10px;padding:0 10px;background:#f8fafc;color:#18304f;font-size:12px;font-weight:800}
+  .mobile-bottom{
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:fixed;left:0;right:0;bottom:0;z-index:70;
+    padding:7px max(8px,env(safe-area-inset-right)) calc(7px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));
+    background:rgba(255,255,255,.985);border-top:1px solid #dfe6ef;box-shadow:0 -8px 28px rgba(14,37,66,.10);backdrop-filter:blur(12px)
+  }
+  .mobile-bottom button{
+    min-width:0;min-height:54px;border:0;background:transparent;border-radius:11px;color:#6a7e96;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:5px 3px;
+    font-size:10px;font-weight:850;line-height:1.05;cursor:pointer
+  }
+  .mobile-bottom button svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .mobile-bottom button.active{background:#eaf2ff;color:#1e63c4}
+  .main{max-width:none;width:100%;padding:22px 22px 94px;margin:0}
+  .metrics{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+  .metric{min-width:0}
+  .table{min-width:0}
+  .table .head{display:none}
+  .table #rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:12px;background:#f7f9fc}
+  .table .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(90px,.55fr);gap:11px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 8px 24px rgba(15,35,65,.05);min-width:0}
+  .table .row>div{min-width:0}
+  .table .row>div:nth-child(1){grid-column:1/-1;padding-bottom:4px}
+  .table .row>div:nth-child(2)::before,.table .row>div:nth-child(4)::before{display:block;font-size:9px;color:var(--muted);font-weight:900;text-transform:uppercase;margin-bottom:3px;letter-spacing:.06em}
+  .table .row>div:nth-child(2)::before{content:"Horário"}
+  .table .row>div:nth-child(4)::before{content:"Resumo do mês"}
+  .table .row>div:nth-child(3){grid-column:1/-1}
+  .table .row>div:nth-child(5){grid-column:1/-1}
+  .table .row>div:nth-child(5).chips{display:grid;grid-template-columns:1fr 1fr}
+  .table .row>div:nth-child(5) .btn{min-height:42px}
+  .statusset{display:grid;grid-template-columns:repeat(auto-fit,minmax(58px,1fr));gap:7px;width:100%}
+  .statusset .status{width:100%;min-height:44px}
+  .summarychips{align-content:start}
+  .settings{grid-template-columns:1fr}
+  .settings .card[style*="grid-column"]{grid-column:auto!important}
+  .wide{width:min(760px,calc(100vw - 28px));max-height:calc(100dvh - 28px)}
+  .modal{max-height:calc(100dvh - 28px);overflow:auto}
+  .cookie-consent{bottom:82px}
+}
+@media(max-width:760px){
+  .mobile-top{padding:8px 10px}
+  .mobile-top-brand span:last-child{font-size:13px}
+  .mobile-top .mobile-unit{max-width:190px}
+  .main{padding:16px 12px 92px}
+  .header{align-items:stretch;flex-direction:column;gap:12px;margin-bottom:14px}
+  .header h1{font-size:24px}
+  .header>div:first-child{min-width:0}
+  .datebar{width:100%;display:grid;grid-template-columns:42px minmax(0,1fr) 42px;gap:7px;padding:6px}
+  .datebar .input{width:100%;min-width:0;grid-column:1/-1;grid-row:1}
+  .datebar #prevDay{grid-column:1;grid-row:2}
+  .datebar #todayBtn{grid-column:2;grid-row:2}
+  .datebar #nextDay{grid-column:3;grid-row:2}
+  .metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}
+  .metric{padding:13px;min-height:82px}
+  .metric span{font-size:9px;line-height:1.3}
+  .metric strong{font-size:22px}
+  .panel{padding:9px;border-radius:13px}
+  .toolbar{align-items:stretch;gap:8px}
+  .toolbar .search{min-width:0;width:100%;flex-basis:100%}
+  .toolbar>.btn{width:100%;min-height:43px}
+  .tablewrap{overflow:visible;border:0;background:transparent}
+  .table #rows{grid-template-columns:1fr;padding:0;background:transparent}
+  .table .row{grid-template-columns:minmax(0,1fr) minmax(82px,.42fr);padding:13px}
+  .table .row>div:nth-child(2){text-align:right}
+  .table .row>div:nth-child(4){text-align:left}
+  .table .row>div:nth-child(5).chips{grid-template-columns:1fr 1fr}
+  .name strong{font-size:14px;word-break:break-word}
+  .name small{font-size:11px;word-break:break-word}
+  .simple .head{display:none}
+  .simple .row{display:grid!important;grid-template-columns:1fr 1fr!important;gap:10px;padding:13px;background:#fff;border:1px solid #e3e9f1;border-radius:13px;margin-bottom:9px}
+  .simple .row>div{min-width:0}
+  .simple .row>div:nth-child(1){grid-column:1/-1}
+  .simple .row>div:nth-child(5){grid-column:1/-1}
+  .simple .row>div:nth-child(5).chips{display:grid;grid-template-columns:1fr 1fr}
+  .simple .row>div:nth-child(5).chips .btn{width:100%;min-height:40px}
+  .report{min-width:680px}
+  .report .head,.report .row{font-size:11px}
+  .record-grid{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .actions{flex-wrap:wrap}
+  .actions .btn{min-height:42px}
+}
+@media(max-width:430px){
+  .mobile-top{gap:7px}
+  .mobile-top-brand span:last-child{display:none}
+  .mobile-top .mobile-unit{max-width:none}
+  .main{padding-left:10px;padding-right:10px}
+  .metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .metric{padding:11px}
+  .table .row{grid-template-columns:1fr auto}
+  .table .row>div:nth-child(4){grid-column:1/-1}
+  .table .row>div:nth-child(5).chips{grid-template-columns:1fr}
+  .simple .row{grid-template-columns:1fr!important}
+  .simple .row>div:nth-child(1),.simple .row>div:nth-child(5){grid-column:auto}
+  .simple .row>div:nth-child(5).chips{grid-template-columns:1fr}
+  .mobile-bottom button{font-size:9px;min-height:52px}
+  .cookie-actions{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -274,7 +387,7 @@ async function boot(){var raw=localStorage.getItem("cp-session");if(raw){try{var
 function auth(){document.getElementById("app").innerHTML='<div class="login-v2"><section class="login-v2-hero"><div class="login-v2-content"><div class="login-v2-brand"><div class="login-v2-logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><div class="login-v2-brandtext"><span>Clínica</span><strong>Presença</strong></div></div><p class="login-v2-kicker">Rotina clínica organizada</p><h1>Seu atendimento,<span>mais simples e organizado.</span></h1><p class="login-v2-desc">Pacientes, frequência, assinaturas e prontuário em um único lugar — pensado para a rotina do profissional.</p><div class="login-v2-features"><div class="login-v2-feature"><div class="login-v2-feature-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div><div><strong>Pacientes organizados</strong><p>Cadastros, unidades e histórico sempre à mão.</p></div></div><div class="login-v2-feature"><div class="login-v2-feature-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg></div><div><strong>Prontuário digital</strong><p>Avaliação inicial, avaliações e evoluções no mesmo fluxo.</p></div></div><div class="login-v2-feature"><div class="login-v2-feature-icon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16v-4M12 16V8M17 16v-7"/></svg></div><div><strong>Controle e relatórios</strong><p>Frequência, assinaturas e documentos prontos para consulta.</p></div></div></div></div></section><section class="login-v2-side"><div class="login-v2-card"><p class="login-v2-eyebrow">Acesso restrito</p><h2 id="at">Entrar na plataforma</h2><p id="ad" class="login-v2-subtitle">Use seu nome de usuário e senha para acessar.</p><div id="am" role="status" aria-live="polite"></div><form id="loginForm" novalidate><div class="login-v2-field"><label for="username">Usuário</label><div class="login-v2-input"><span class="login-v2-input-icon"><svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></span><input id="username" type="text" autocomplete="username" maxlength="32" placeholder="Seu usuário"><span></span></div></div><div class="login-v2-field"><label for="pass">Senha</label><div class="login-v2-input"><span class="login-v2-input-icon"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><input id="pass" type="password" autocomplete="current-password" minlength="12" placeholder="Sua senha"><button id="togglePass" type="button" class="login-v2-eye" aria-label="Mostrar senha"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg></button></div></div><div class="login-v2-field hidden" id="af"><label for="activation">Código de ativação</label><div class="login-v2-input"><span class="login-v2-input-icon"><svg viewBox="0 0 24 24"><path d="M12 2l7 4v5c0 5-3 9-7 11-4-2-7-6-7-11V6z"/></svg></span><input id="activation" type="password" autocomplete="off" placeholder="Código de uso único"><span></span></div></div><button id="go" type="submit" class="login-v2-submit">Entrar na plataforma →</button></form><div class="login-v2-security">🔒 Acesso seguro e protegido</div><div class="login-v2-activate"><button id="activate" type="button" class="link">Ativar primeiro administrador</button></div><div class="login-v2-legal"><a href="/privacy.html">Privacidade</a><a href="/terms.html">Termos</a><a href="/faq.html">Perguntas frequentes</a></div></div></section></div>';var mode="login";function setMode(next){mode=next;var activating=mode==="activate";$("#at").textContent=activating?"Ativar administrador":"Entrar na plataforma";$("#ad").textContent=activating?"Defina a senha do administrador e informe o código de ativação.":"Use seu nome de usuário e senha para acessar.";$("#go").textContent=activating?"Ativar administrador →":"Entrar na plataforma →";$("#af").classList.toggle("hidden",!activating);$("#activate").textContent=activating?"Voltar ao login":"Ativar primeiro administrador";$("#username").disabled=activating;if(activating)$("#username").value="admin"}var toggle=$("#togglePass");if(toggle)toggle.onclick=function(){var p=$("#pass"),show=p.type==="password";p.type=show?"text":"password";toggle.setAttribute("aria-label",show?"Ocultar senha":"Mostrar senha");toggle.innerHTML=show?'<svg viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 4.2A10.6 10.6 0 0 1 12 4c6.5 0 10 8 10 8a18 18 0 0 1-2.1 3.2"/><path d="M6.6 6.6C3.7 8.4 2 12 2 12s3.5 8 10 8a9.8 9.8 0 0 0 4.1-.9"/></svg>':'<svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg>'};$("#activate").onclick=function(){setMode(mode==="activate"?"login":"activate")};async function submitLogin(){var username=$("#username").value.trim().toLowerCase(),pass=$("#pass").value,activation=$("#activation").value.trim();if(!username||!pass){msg("#am","Informe usuário e senha.",false);return}if(!/^[a-z0-9._-]{3,32}$/.test(username)){msg("#am","Usuário inválido.",false);return}if(pass.length<12){msg("#am","A senha precisa ter pelo menos 12 caracteres.",false);return}if(mode==="activate"&&!activation){msg("#am","Informe o código de ativação.",false);return}var go=$("#go");go.disabled=true;go.textContent=mode==="activate"?"Ativando...":"Entrando...";try{var payload=mode==="activate"?{action:"bootstrap",username:username,password:pass,secret:activation}:{action:"login",username:username,password:pass};var r=await fetch(SB+"/functions/v1/username-auth",{method:"POST",headers:{"apikey":KEY,"Content-Type":"application/json"},body:JSON.stringify(payload)});var j=await r.json();if(!r.ok)throw new Error(j.error||"Falha no acesso");if(!j.session)throw new Error("Sessão não recebida.");save(j.session);trackEvent("login_success");boot()}catch(x){msg("#am",x.message,false);go.disabled=false;go.textContent=mode==="activate"?"Ativar administrador →":"Entrar na plataforma →"}}$("#loginForm").onsubmit=function(ev){ev.preventDefault();submitLogin()};$("#username").onkeydown=function(ev){if(ev.key==="Enter"){$("#pass").focus();ev.preventDefault()}};fetch(SB+"/functions/v1/username-auth",{method:"POST",headers:{"apikey":KEY,"Content-Type":"application/json"},body:JSON.stringify({action:"status"})}).then(function(r){return r.json()}).then(function(j){if(j&&j.initialized){var a=$("#activate");if(a)a.classList.add("hidden")}}).catch(function(){});privacyConsent();trackPageViewOnce()}
 function onboarding(){document.getElementById("app").innerHTML='<div class="side" style="min-height:100vh"><div class="card login"><div class="eyebrow">Configuração inicial</div><h2>Criar a clínica</h2><p>Somente o primeiro usuário autenticado consegue inicializar este banco.</p><div id="om"></div><div class="field"><label>Nome da clínica</label><input id="cn" class="input" maxlength="120"></div><button id="cc" class="btn primary full">Criar ambiente</button><button id="lo" class="link" style="margin-top:12px">Sair</button></div></div>';$("#cc").onclick=async function(){try{await req("/rest/v1/rpc/create_clinic_and_owner",{method:"POST",body:JSON.stringify({clinic_name:$("#cn").value.trim()})});boot()}catch(x){msg("#om",x.message,false)}};$("#lo").onclick=logout}
 function cname(){var c=S.member.clinics;return Array.isArray(c)?(c[0]&&c[0].name)||"Clínica":(c&&c.name)||"Clínica"}
-function shell(){var userName=(S.user.user_metadata&&S.user.user_metadata.username)||"admin",initial=(userName.charAt(0)||"U").toUpperCase(),locHtml=S.locations.length?'<div class="clinicbar"><label>UNIDADE ATUAL</label><select id="locationSelect">'+S.locations.map(function(l){return '<option value="'+l.id+'" '+(S.location&&l.id===S.location.id?"selected":"")+'>'+e(l.name)+'</option>'}).join("")+'</select></div>':"",mobileLoc=S.locations.length?'<select id="mobileLocationSelect" class="mobile-unit" aria-label="Unidade">'+S.locations.map(function(l){return '<option value="'+l.id+'" '+(S.location&&l.id===S.location.id?"selected":"")+'>'+e(l.name)+'</option>'}).join("")+'</select>':"";var logo='<span class="app-brand-logo"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>';document.getElementById("app").innerHTML='<div class="shell"><aside class="nav"><div class="app-brand">'+logo+'<div class="app-brand-name"><span>Clínica</span><strong>Presença</strong></div></div>'+locHtml+'<div class="nav-section-title">Menu principal</div><button data-v="attendance"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Atendimentos</span></button><button data-v="patients"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg><span>Pacientes</span></button><button data-v="reports"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span>Relatórios</span></button><button data-v="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9A1.7 1.7 0 0 0 21 10h.2v4H21a1.7 1.7 0 0 0-1.6 1z"/></svg><span>Configurações</span></button><div class="who"><div class="user-avatar">'+e(initial)+'</div><div class="user-meta"><strong>'+e(userName)+'</strong><span>'+e(S.member.role==="owner"?"Proprietário":S.member.role==="admin"?"Administrador":"Equipe")+'</span><button id="out" class="link">Sair da conta</button></div></div></aside><div><div class="mobile"><div class="mobile-brand"><span class="mini-logo"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span>Presença</span></div>'+mobileLoc+'<button data-v="attendance">Atendimentos</button><button data-v="patients">Pacientes</button><button data-v="reports">Relatórios</button><button data-v="settings">Config.</button></div><main class="main" id="main"></main></div></div>';$$("[data-v]").forEach(function(b){b.onclick=function(){S.view=b.dataset.v;active();loadView()}});function changeLocation(id){S.location=S.locations.find(function(l){return l.id===id})||S.locations[0]||null;if(S.location)localStorage.setItem("cp-location-"+S.member.clinic_id,S.location.id);shell();loadView()}if($("#locationSelect"))$("#locationSelect").onchange=function(){changeLocation($("#locationSelect").value)};if($("#mobileLocationSelect"))$("#mobileLocationSelect").onchange=function(){changeLocation($("#mobileLocationSelect").value)};$("#out").onclick=logout;active();privacyConsent();trackPageViewOnce()}
+function shell(){var userName=(S.user.user_metadata&&S.user.user_metadata.username)||"admin",initial=(userName.charAt(0)||"U").toUpperCase(),locHtml=S.locations.length?'<div class="clinicbar"><label>UNIDADE ATUAL</label><select id="locationSelect">'+S.locations.map(function(l){return '<option value="'+l.id+'" '+(S.location&&l.id===S.location.id?"selected":"")+'>'+e(l.name)+'</option>'}).join("")+'</select></div>':"",mobileLoc=S.locations.length?'<select id="mobileLocationSelect" class="mobile-unit" aria-label="Unidade">'+S.locations.map(function(l){return '<option value="'+l.id+'" '+(S.location&&l.id===S.location.id?"selected":"")+'>'+e(l.name)+'</option>'}).join("")+'</select>':"";var logo='<span class="app-brand-logo"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>';document.getElementById("app").innerHTML='<div class="shell"><aside class="nav"><div class="app-brand">'+logo+'<div class="app-brand-name"><span>Clínica</span><strong>Presença</strong></div></div>'+locHtml+'<div class="nav-section-title">Menu principal</div><button data-v="attendance"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Atendimentos</span></button><button data-v="patients"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg><span>Pacientes</span></button><button data-v="reports"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span>Relatórios</span></button><button data-v="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9A1.7 1.7 0 0 0 21 10h.2v4H21a1.7 1.7 0 0 0-1.6 1z"/></svg><span>Configurações</span></button><div class="who"><div class="user-avatar">'+e(initial)+'</div><div class="user-meta"><strong>'+e(userName)+'</strong><span>'+e(S.member.role==="owner"?"Proprietário":S.member.role==="admin"?"Administrador":"Equipe")+'</span><button id="out" class="link">Sair da conta</button></div></div></aside><div>'+"<div class=\"mobile-top\"><div class=\"mobile-top-brand\"><span class=\"mini-logo\"><svg viewBox=\"0 0 24 24\"><path d=\"M12 5v14M5 12h14\"/></svg></span><span>Clínica Presença</span></div>'+mobileLoc+'</div>"+"<nav class=\"mobile-bottom\" aria-label=\"Navegação principal\"><button data-v=\"attendance\" aria-label=\"Atendimentos\"><svg viewBox=\"0 0 24 24\"><path d=\"M9 11l3 3L22 4\"/><path d=\"M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11\"/></svg><span>Atendimentos</span></button><button data-v=\"patients\" aria-label=\"Pacientes\"><svg viewBox=\"0 0 24 24\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"/><circle cx=\"8.5\" cy=\"7\" r=\"4\"/><path d=\"M20 8v6M23 11h-6\"/></svg><span>Pacientes</span></button><button data-v=\"reports\" aria-label=\"Relatórios\"><svg viewBox=\"0 0 24 24\"><path d=\"M4 19V9M10 19V5M16 19v-7M22 19H2\"/></svg><span>Relatórios</span></button><button data-v=\"settings\" aria-label=\"Configurações\"><svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9A1.7 1.7 0 0 0 21 10h.2v4H21a1.7 1.7 0 0 0-1.6 1z\"/></svg><span>Config.</span></button></nav>"+'<main class="main" id="main"></main></div></div>';$$("[data-v]").forEach(function(b){b.onclick=function(){S.view=b.dataset.v;active();loadView()}});function changeLocation(id){S.location=S.locations.find(function(l){return l.id===id})||S.locations[0]||null;if(S.location)localStorage.setItem("cp-location-"+S.member.clinic_id,S.location.id);shell();loadView()}if($("#locationSelect"))$("#locationSelect").onchange=function(){changeLocation($("#locationSelect").value)};if($("#mobileLocationSelect"))$("#mobileLocationSelect").onchange=function(){changeLocation($("#mobileLocationSelect").value)};$("#out").onclick=logout;active();privacyConsent();trackPageViewOnce()}
 function active(){var current=S.view==="users"?"settings":S.view;$$("[data-v]").forEach(function(b){b.classList.toggle("active",b.dataset.v===current)})}
 async function logout(){try{await req("/auth/v1/logout",{method:"POST"})}catch(x){}save(null);S.user=null;auth()}
 function bounds(v){var a=v.slice(0,7).split("-").map(Number);return {s:v.slice(0,7)+"-01",n:new Date(Date.UTC(a[0],a[1],1)).toISOString().slice(0,10)}}
