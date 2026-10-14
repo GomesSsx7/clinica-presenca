@@ -14,3 +14,17 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/site_smoke.mjs
+      - name: Responsive viewport checks
+        shell: bash
+        run: |
+          node scripts/make_responsive_probe.mjs
+          CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          test -n "$CHROME"
+          for size in 390,844 768,1024 1366,768; do
+            echo "Checking viewport $size"
+            OUT="$($CHROME --headless --no-sandbox --disable-gpu --hide-scrollbars --virtual-time-budget=600 --window-size="$size" --dump-dom "file://$PWD/.responsive-probe.html" 2>/dev/null)"
+            echo "$OUT" | grep -q 'data-responsive="ok"' || {
+              echo "$OUT" | grep -o 'data-responsive-info="[^"]*"' || true
+              exit 1
+            }
+          done
