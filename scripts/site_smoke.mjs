@@ -18,12 +18,13 @@ for(const requiredText of [
   'href="/favicon.svg"',
   'http-equiv="Content-Security-Policy"',
   "script-src 'self'",
-  'src="/app.js"',
-  'privacy.html',
-  'terms.html',
-  'faq.html'
+  'src="/app.js"'
 ]){
   if(!index.includes(requiredText)) throw new Error("Checklist ausente no index: "+requiredText);
+}
+
+for(const requiredText of ['privacy.html','terms.html','faq.html']){
+  if(!app.includes(requiredText)) throw new Error("Link público ausente no app.js: "+requiredText);
 }
 
 if(/<script>([\s\S]*?)<\/script>/i.test(index)) throw new Error("JavaScript inline voltou para index.html");
