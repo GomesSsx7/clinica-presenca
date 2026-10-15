@@ -1,8 +1,15 @@
 import fs from "node:fs";
 
 let html=fs.readFileSync("index.html","utf8");
-const marker="boot();\n</script>";
-if(!html.includes(marker)) throw new Error("boot marker not found");
+let app=fs.readFileSync("app.js","utf8");
+
+html=html.replace(/<meta http-equiv="Content-Security-Policy"[^>]*>\s*/i,"");
+const scriptTag='<script src="/app.js" defer></script>';
+if(!html.includes(scriptTag)) throw new Error("app.js script tag not found");
+
+const marker="boot();";
+const pos=app.lastIndexOf(marker);
+if(pos<0) throw new Error("boot marker not found");
 
 const mock=`
 localStorage.setItem("cp-privacy-choice","essential");
@@ -53,5 +60,6 @@ setTimeout(function(){
 },120);
 `;
 
-html=html.replace(marker,mock+"\n</script>");
+app=app.slice(0,pos)+mock+app.slice(pos+marker.length);
+html=html.replace(scriptTag,"<script>"+app.replace(/<\/script/gi,"<\\/script")+"</script>");
 fs.writeFileSync(".responsive-probe.html",html);
